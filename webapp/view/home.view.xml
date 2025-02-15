@@ -1,0 +1,10 @@
+<mvc:View controllerName="project1.controller.home"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m">
+    <Page id="page" title="{i18n>title}">
+        <content>
+            <Input id="inputField" placeholder="Enter your message..." width="25%"></Input>
+            <Button id="button1" text="Show Message" press=".onShowMessage"/>
+        </content>
+    </Page>
+</mvc:View>
