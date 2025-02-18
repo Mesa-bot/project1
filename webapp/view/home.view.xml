@@ -3,8 +3,13 @@
     xmlns="sap.m">
     <Page id="page" title="{i18n>title}">
         <content>
-            <Input id="inputField" placeholder="Enter your message..." width="25%"></Input>
-            <Button id="button1" text="Show Message" press=".onShowMessage"/>
+            <VBox class="sapUiSmallMargin">
+            <Input placeholder="Enter a task..." id="idTaskInput" width="40%"></Input>
+            <Button text="Add Task... " press=".onAddTask"></Button>
+            </VBox>
+            <List id="idTaskList" items="{/tasks}">
+               <StandardListItem title="{task}" class="{= ${completed} ? 'taskCompleted' : '' }" />
+            </List>
         </content>
     </Page>
 </mvc:View>
