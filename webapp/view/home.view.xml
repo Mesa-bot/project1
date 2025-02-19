@@ -4,11 +4,12 @@
     <Page id="page" title="{i18n>title}">
         <content>
             <VBox class="sapUiSmallMargin">
-            <Input placeholder="Enter a task..." id="idTaskInput" width="40%"></Input>
-            <Button text="Add Task... " press=".onAddTask"></Button>
+            <Input placeholder="Enter a task..." id="idTaskInput" width="40%" liveChange=".onInputChange"></Input>
+            <Button id="addTaskButton" text="Add Task... " press=".onAddTask" enabled="false"></Button>
+            <Text id="totalTasks" text="Total Tasks: {/taskCount}"></Text>
             </VBox>
             <List id="idTaskList" items="{/tasks}">
-               <StandardListItem title="{task}" class="{= ${completed} ? 'taskCompleted' : '' }" />
+               <StandardListItem title="{task}"/>
             </List>
         </content>
     </Page>
