@@ -47,7 +47,7 @@ export default class home extends Controller {
       task: string;
     }[];
 
-    // Function to check if the task already exists
+    // Function to check if the task already existss
     function checkCopy(): boolean {
       return tasks.some(
         (taskObj: { task: string }) => taskObj.task === newTask
@@ -98,4 +98,6 @@ export default class home extends Controller {
     button.setProperty("enabled", true);
     return;
   }
+
+  public onDeleteTask(): void {}
 }

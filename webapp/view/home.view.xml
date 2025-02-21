@@ -3,13 +3,20 @@
     xmlns="sap.m">
     <Page id="page" title="{i18n>title}">
         <content>
-            <VBox class="sapUiSmallMargin">
-            <Input placeholder="Enter a task..." id="idTaskInput" width="40%" liveChange=".onInputChange"></Input>
+            <HBox class="sapUiSmallMargin">
+            <Input placeholder="Enter a task..." id="idTaskInput" width="90%" liveChange=".onInputChange"></Input>
             <Button id="addTaskButton" text="Add Task... " press=".onAddTask" enabled="false"></Button>
             <Text id="totalTasks" text="Total Tasks: {/taskCount}"></Text>
-            </VBox>
+            </HBox>
             <List id="idTaskList" items="{/tasks}">
-               <StandardListItem title="{task}"/>
+            <items>
+                <CustomListItem>
+                        <HBox alignItems="Center" justifyContent="SpaceBetween">
+                            <Text text="{task}" width="100%"/>
+                            <Button icon="sap-icon://delete" press=".onDeleteTask"/>
+                        </HBox>
+                    </CustomListItem>
+            </items>
             </List>
         </content>
     </Page>
